@@ -19,10 +19,10 @@ body {
 	width: 12px;
 }
 .c-title{
+  background-color: #ca2420; 
 	position: relative;
 	width: 100%;
 	height: 265px;
-	background-image: linear-gradient(to left,#ff8736,#ffa83e);
 	text-align: center;
 	box-sizing: border-box;
 	padding: 70px;
@@ -79,14 +79,14 @@ body {
 	padding: 15px 0px;
 	position: relative;
 	margin: auto;
-	box-shadow: 0 0 7px #fdd8ac;
+	box-shadow: 0 0 7px #ca2420;
 	border-radius: 12px;
 	margin: -60px auto 0px auto;
 	background: white;
 }
 .c-login h1{
 	font-size: 17px;
-	color: rgb(255,168,62);
+	color: #ca2420;
 	margin: 0px 0px 15px 40px;
 	font-weight: bold;
 }
@@ -138,7 +138,7 @@ body {
 	border-radius: 20px;
 	width: 230px;
 	color: white;
-	background-color: #ffa83e;
+	background-color: #ca2420;
 	font-size: 14px;
 }
 .c-login .otherBtn{
