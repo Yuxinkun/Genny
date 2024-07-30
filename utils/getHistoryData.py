@@ -2,7 +2,7 @@ import tushare as ts
 import numpy as np
 import time
 def getHistoryData(t):
-    pro = ts.pro_api('17649607a4e92be1fe38fb52b2ff2e044ac6301f665e98b278ab14a7')
+    pro = ts.pro_api('5e32fc5444690de433fdab31c3b5f479f6b2f74083c9186299f0b8fe')
     strt = time.strftime('%Y-%m-%d', time.localtime(time.time()))
 
     strt = strt.split("-")
@@ -16,6 +16,6 @@ def getHistoryData(t):
 
 
     return res
-# print(getHistoryData("000001.SZ"))
+print(getHistoryData("000001.SZ"))
 
 # print(getHistoryData("000002.SH"))

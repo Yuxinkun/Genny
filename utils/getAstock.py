@@ -22,13 +22,13 @@ def getAstock(t):
 
 
 
-    pro = ts.pro_api('17649607a4e92be1fe38fb52b2ff2e044ac6301f665e98b278ab14a7')
+    pro = ts.pro_api('5e32fc5444690de433fdab31c3b5f479f6b2f74083c9186299f0b8fe')
     # data = pro.stock_basic(exchange='', list_status='L', fileds='ts_code,symbol,name,area,industry,list_date')
 
 
-    df = pro.stk_rewards(ts_code=t)
+    df = pro.daily(ts_code=t)
     m = df.dropna(axis=0)
-    m = m[~m['hold_vol'].isin([0])]
+    m = m[~m['vol'].isin([0])]
     res = np.array(m)
     res = res[0:5,[3,6]]
     # print(res)
@@ -59,3 +59,4 @@ def getAstock(t):
     # res.append(list(m["hold_vol"]))
     # res.append(list(m["name"]))
     # print(res)
+

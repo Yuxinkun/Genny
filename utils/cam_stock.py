@@ -2,7 +2,7 @@ import tushare as ts
 from tradingSystem.models import StockInfo
 from random import randint, random, choice
 
-my_token = '6f6ee0533e28c2bde19102cccfc95de79fe56fc16633f5267fa0985c'
+my_token = '5e32fc5444690de433fdab31c3b5f479f6b2f74083c9186299f0b8fe'
 
 pro = ts.pro_api(my_token)
 # data = pro.stock_basic(exchange='', list_status='L', fileds='ts_code,symbol,name,area,industry,list_date')

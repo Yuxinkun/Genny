@@ -20,7 +20,7 @@ def portinStockInfo(t):
 
 
 def getStockInfo(t):
-    pro = ts.pro_api('17649607a4e92be1fe38fb52b2ff2e044ac6301f665e98b278ab14a7')
+    pro = ts.pro_api('5e32fc5444690de433fdab31c3b5f479f6b2f74083c9186299f0b8fe')
     data = pro.stock_basic(exchange=t, list_status='L', fileds='ts_code,symbol,name,list_date,market')
     data = np.array(data)
     data = data[:, [1, 2, 6, 5]]  # 代号，名称，上市日期，板块
