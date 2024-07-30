@@ -21,7 +21,7 @@
                     <div class="box-body box-profile">
                         {% if user.photo_url %}
                             <img class="profile-user-img img-responsive img-circle"
-                                 src="{{ user.photo_url }}" alt="用户头像">
+                                 src="{{ user.photo_url }}" alt="user avatar">
                         {% else %}
                             <img class="profile-user-img img-responsive img-circle" src="{% static 'img/head.jpg' %}"
                                  alt="User profile picture">
@@ -34,18 +34,18 @@
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
-                                <b>账号余额</b> <a
-                                    class="pull-right">{{ user.account_balance | floatformat }}元</a>
+                                <b>Account balance</b> <a
+                                    class="pull-right">{{ user.account_balance | floatformat }}$</a>
                             </li>
                             <li class="list-group-item">
-                                <b>买入</b> <a class="pull-right">{{ buy_in }}手</a>
+                                <b>buy</b> <a class="pull-right">{{ buy_in }}$</a>
                             </li>
                             <li class="list-group-item">
-                                <b>抛出</b> <a class="pull-right">{{ buy_out }}手</a>
+                                <b>sell</b> <a class="pull-right">{{ buy_out }}$</a>
                             </li>
                         </ul>
 
-                        <button id="change_btn" type="submit" class="btn btn-primary btn-block"><b>修改头像</b></button>
+                        <!-- <button id="change_btn" type="submit" class="btn btn-primary btn-block"><b>Modify profile picture</b></button> -->
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -55,7 +55,7 @@
                      style="margin-top:60px; margin-bottom: 10px;text-align: right">
                     <button id="sub_btn" type="submit" data-toggle="modal" data-target="#myModal"
                             class="btn  btn-default btn-sm float-right">
-                        上传图片
+                        upload pictures
                     </button>
                 </div>
 
@@ -129,7 +129,7 @@
             <div class="col-md-9">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li><a href="#settings" data-toggle="tab">查看和修改我的信息</a></li>
+                        <li><a href="#settings" data-toggle="tab">View and modify my information</a></li>
                     </ul>
                     <div class="tab-content">
 
@@ -148,7 +148,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="user_name" class="col-sm-2 control-label">姓名</label>
+                                    <label for="user_name" class="col-sm-2 control-label">Name</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="user_name" id="user_name"
@@ -157,7 +157,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="user_email" class="col-sm-2 control-label">邮箱</label>
+                                    <label for="user_email" class="col-sm-2 control-label">Email</label>
 
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" name="user_email" id="user_email"
@@ -166,23 +166,23 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="user_sex" class="col-sm-2 control-label">性别</label>
+                                    <label for="user_sex" class="col-sm-2 control-label">Gender</label>
 
                                     <div class="col-sm-10">
                                         <select name="user_sex" class="select2" id="user_sex" style="width: 100%">
-                                            {% if user.user_sex == "男" %}
-                                                <option class="active" value="男">男</option>
-                                                <option value="女">女</option>
+                                            {% if user.user_sex == "Male" %}
+                                                <option class="active" value="Male">Male</option>
+                                                <option value="Female">Female</option>
                                             {% else %}
-                                                <option value="男">男</option>
-                                                <option class="active" value="女">女</option>
+                                                <option value="Male">Male</option>
+                                                <option class="active" value="Female">Female</option>
                                             {% endif %}
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="phone_number" class="col-sm-2 control-label">手机</label>
+                                    <label for="phone_number" class="col-sm-2 control-label">Phone</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="phone_number" class="form-control" id="phone_number"
@@ -191,7 +191,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="id_no" class="col-sm-2 control-label">身份证号</label>
+                                    <label for="id_no" class="col-sm-2 control-label">Identity Card</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="id_no" class="form-control" id="id_no"
@@ -200,7 +200,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="account_num" class="col-sm-2 control-label">银行账户</label>
+                                    <label for="account_num" class="col-sm-2 control-label">Bank Account</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="account_num" class="form-control" id="account_num"
@@ -209,7 +209,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="account_type" class="col-sm-2 control-label">银行类型</label>
+                                    <label for="account_type" class="col-sm-2 control-label">Bank Type</label>
 
                                     <div class="col-sm-10">
                                         <select name="account_type" class="select2" id="account_type"
@@ -226,7 +226,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password" class="col-sm-2 control-label">密码</label>
+                                    <label for="password" class="col-sm-2 control-label">Password</label>
 
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" name="password" id="password">
@@ -234,7 +234,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="conf_password" class="col-sm-2 control-label">确认密码</label>
+                                    <label for="conf_password" class="col-sm-2 control-label">Confirm Password</label>
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" name="conf_password"
                                                id="conf_password">
@@ -243,7 +243,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" id="conf_modify" class="btn btn-danger">确认修改</button>
+                                        <button type="submit" id="conf_modify" class="btn btn-danger">Confirm Modification</button>
                                     </div>
                                 </div>
 
@@ -287,10 +287,10 @@
                         processData: false,
                         contentType: false,
                         success: function (data) {
-                            alert("修改成功，刷新生效");
+                            alert("The modification succeeds, and the refresh takes effect");
                         },
                         error: function () {
-                            alert("网络错误");
+                            alert("network error");
                         }
                     });
                     return false;
