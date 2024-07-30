@@ -27,20 +27,20 @@
 
                             <div class="form-group">
                                 <label for="username" style="font-size:15px;"
-                                       class="col-sm-2 control-label">当前股价:</label>
+                                       class="col-sm-2 control-label">Current Price:</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="X" id="pri" readonly>
                                 </div>
                             </div>
                               <div class="form-group">
                                 <label for="username" style="font-size:15px;"
-                                       class="col-sm-2 control-label">持有股数:</label>
+                                       class="col-sm-2 control-label">Shares Held:</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="hdon" id="holdon" readonly>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="age" class="col-sm-2 control-label" style="font-size:15px;">减持股数:</label>
+                                <label for="age" class="col-sm-2 control-label" style="font-size:15px;">Sell Quantity:</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="Y">
                                 </div>
@@ -49,21 +49,21 @@
                     </div>
                     <div class="modal-footer">
                         <span id="errorMsg" style="color: red;"></span>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" id="btnEditSave">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="btnEditSave">Confirm</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8">
-                <div class="box box-info">
+                <div class="box box-info" style="border-top-color: #ca2420;">
                     <div class="box-header with-border">
 
                         <ul class="nav navbar-nav">
                             <a class="btn btn-outline-success btn-sm" style="color:black;Font-size:18px"
-                               href="{% url 'tradingSystem:stock_info' sid %}">股票日K</a>
-                            <a class="btn btn-outline-success btn-sm" style="color:black;Font-size:18px" id="rtquotes">实时股价</a>
+                               href="{% url 'tradingSystem:stock_info' sid %}">Stocks Daily Average</a>
+                            <a class="btn btn-outline-success btn-sm" style="color:black;Font-size:18px" id="rtquotes">Real-time Prices</a>
                         </ul>
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
@@ -80,8 +80,8 @@
                     <div class="box-footer clearfix">
 
                         <a href="{% url 'tradingSystem:stock_list' %}"
-                           class="btn btn-sm btn-info btn-flat pull-left">返回</a>
-                        <a class="btn btn-sm btn-info btn-flat pull-right" id="seam">卖出</a>
+                           class="btn btn-sm btn-info btn-flat pull-left" style="background-color: #ca2420;border-color:#ca2420;">Back</a>
+                        <a class="btn btn-sm btn-info btn-flat pull-right" id="seam" style="background-color: #ca2420;border-color:#ca2420;">Sell</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
                     <div class="box-header">
                         <i class="fa fa-th"></i>
 
-                        <h3 class="box-title">股权占比</h3>
+                        <h3 class="box-title">Portfolio</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i
@@ -111,59 +111,6 @@
                     <!-- /.box-footer -->
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <!-- Chat box -->
-                <div class="box box-success">
-                    <div class="box-header">
-                        <i class="fa fa-comments-o"></i>
-
-                        <h3 class="box-title">股票评论</h3>
-
-                        <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                            <div class="btn-group" data-toggle="btn-toggle">
-                                <button type="button" class="btn btn-default btn-sm active"><i
-                                        class="fa fa-square text-green"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm"><i
-                                        class="fa fa-square text-red"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-body chat" id="chat-box">
-                        {% for comment in comments %}
-                            <div class="item">
-                            <img src="{{ comment.user_id.photo_url }}" alt="user image" class="online">
-                            <p class="message">
-                                <a href="{% url 'tradingSystem:view_user_profile' comment.user_id.phone_number %}" class="name">
-                                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ comment.comment_time }}</small>
-                                    {{ comment.user_id.user_name }}
-                                </a>
-                                {{ comment.content }}
-                            </p>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    {% comment %}
-                    <!-- /.chat -->
-                    <div class="box-footer">
-                        <div class="input-group">
-                            <input class="form-control" placeholder="Type message...">
-
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    {% endcomment %}
-                </div>
-                <!-- /.box (chat box) -->
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row">
-
         </div>
 
     </section>
@@ -418,7 +365,7 @@
 
         option = {
             title: {
-                text: '股权占比',
+                text: 'Portfolio',
                 left: 'center'
             },
             tooltip: {
@@ -471,7 +418,7 @@
                         },
                         title: {
                             left: 'center',
-                            text: '实时股价',
+                            text: 'Real-time Prices',
                         },
                         toolbox: {
                             feature: {
