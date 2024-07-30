@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block title %}欢迎登录股票交易管理系统{% endblock %}</title>
+    <title>{% block title %}Welcome Stock Trading System{% endblock %}</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="shortcut icon" href="{% static 'img/buct-logo.ico' %}"/>
     <link rel="bookmark" href="{% static 'img/buct-logo.ico' %}"/>
@@ -77,11 +77,11 @@
 
 <div class="wrapper">
     <header class="main-header">
-        <a href="{% url 'tradingSystem:index' %}" class="logo">
-            <span class="logo-lg"><b>股票交易管理系统</b></span>
+        <a href="{% url 'tradingSystem:index' %}" class="logo" style="background-color: #ca2420;">
+            <span class="logo-lg"><b>Stock Trading System</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
+        <nav class="navbar navbar-static-top" style="background-color: #ca2420;">
             <!-- Sidebar toggle button-->
             <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
@@ -97,7 +97,7 @@
                                 <span class="label label-success">4</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">你有4消息</li>
+                                <li class="header">You have 4 messages</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -105,7 +105,7 @@
                                             <a href="{% url 'tradingSystem:user_profile' %}">
                                                 <div class="pull-left">
                                                     <img src="{{ request.session.photo_url }}" class="img-circle"
-                                                         alt="用户头像">
+                                                         alt="user avatar">
                                                 </div>
                                                 <h4>
                                                     Support Team
@@ -119,7 +119,7 @@
                                             <a href="#">
                                                 <div class="pull-left">
                                                     <img src="{{ request.session.photo_url }}" class="img-circle"
-                                                         alt="用户头像">
+                                                         alt="user avatar">
                                                 </div>
                                                 <h4>
                                                     AdminLTE Design Team
@@ -132,7 +132,7 @@
                                             <a href="#">
                                                 <div class="pull-left">
                                                     <img src="{{ request.session.photo_url }}" class="img-circle"
-                                                         alt="用户头像">
+                                                         alt="user avatar">
                                                 </div>
                                                 <h4>
                                                     Developers
@@ -145,7 +145,7 @@
                                             <a href="#">
                                                 <div class="pull-left">
                                                     <img src="{{ request.session.photo_url }}" class="img-circle"
-                                                         alt="用户头像">
+                                                         alt="user avatar">
                                                 </div>
                                                 <h4>
                                                     Sales Department
@@ -158,7 +158,7 @@
                                             <a href="#">
                                                 <div class="pull-left">
                                                     <img src="{{ request.session.photo_url }}" class="img-circle"
-                                                         alt="用户头像">
+                                                         alt="user avatar">
                                                 </div>
                                                 <h4>
                                                     Reviewers
@@ -179,7 +179,7 @@
                                 <span class="label label-warning">10</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">你有10个通知</li>
+                                <li class="header">You have 10 notifications</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -222,7 +222,7 @@
                                 <span class="label label-danger">9</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">你有9项工作</li>
+                                <li class="header">You have nine jobs</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -301,14 +301,14 @@
                         <li class="dropdown user user-menu">
                             <a href="{% url 'tradingSystem:user_profile' %}" class="dropdown-toggle"
                                data-toggle="dropdown">
-                                <img src="{{ request.session.photo_url }}" class="user-image" alt="用户头像">
+                                <img src="{{ request.session.photo_url }}" class="user-image" alt="user avatar">
                                 <span class="hidden-xs">{{ request.session.user_name }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
                                     <img src="{{ request.session.photo_url }}" class="img-circle"
-                                         alt="用户头像">
+                                         alt="user avatar">
                                     <p>
                                         {{ request.session.user_name }}
                                         <small>{{ request.session.user_id }}</small>
@@ -319,10 +319,10 @@
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="{% url 'tradingSystem:user_profile' %}"
-                                           class="btn btn-default btn-flat">信息设置</a>
+                                           class="btn btn-default btn-flat">message settings</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="{% url 'tradingSystem:log_out' %}" class="btn btn-default btn-flat">登出系统</a>
+                                        <a href="{% url 'tradingSystem:log_out' %}" class="btn btn-default btn-flat">logout</a>
                                     </div>
                                 </li>
                             </ul>
@@ -352,20 +352,20 @@
                                 <span>logout</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header" href="{% url 'tradingSystem:mylogout' %}">登出</li>
+                                <li class="header" href="{% url 'tradingSystem:mylogout' %}">logout</li>
                             </ul>
                         </li>
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle pull-right image" data-toggle="dropdown">
                                 <img src="{% static 'img/head.jpg' %}" style="width: 25px;height:25px;"
-                                     class="user-image" alt="用户头像">
-                                <span class="hidden-xs">您好！{{ request.session.name }}</span>
+                                     class="user-image" alt="user avatar">
+                                <span class="hidden-xs">Hello!{{ request.session.name }}</span>
                             </a>
                         </li>
                     {% else %}
                         <li class="dropdown user user-menu">
                             <a href="{% url 'tradingSystem:goto_login' %}" class="dropdown-toggle pull-right image">
-                                <span class="hidden-xs">您尚未登录，请登录！</span>
+                                <span class="hidden-xs">You are not logged in, please log in!</span>
                             </a>
                         </li>
                     {% endif %}
@@ -387,7 +387,7 @@
                     <div class="pull-left image" href="{% url 'tradingSystem:user_profile' %}">
                         {% block user_head_img %}
                             <img src="{{ request.session.photo_url }}" style="width: 50px;height: 50px;"
-                                 class="img-circle" alt="用户头像" href="{% url 'tradingSystem:user_profile' %}">
+                                 class="img-circle" alt="user avatar" href="{% url 'tradingSystem:user_profile' %}">
                         {% endblock %}
                     </div>
                     <div class="pull-left info">
@@ -395,7 +395,7 @@
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 {% else %}
-                    <div>您尚未注册，点我<a style="color:yellowgreen" href="{% url 'tradingSystem:register' %}">注册</a></div>
+                    <div>You haven't registered yet. Click me<a style="color:yellowgreen" href="{% url 'tradingSystem:register' %}">register</a></div>
                 {% endif %}
             </div>
             <!-- search form -->
@@ -412,10 +412,10 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 {% if request.session %}
-                    <li class="header">导航栏</li>
+                    <li class="header">Navigation</li>
                     <li class="active">
                         <a href="{% url 'tradingSystem:index' %}">
-                            <i class="fa fa-dashboard"></i> <span>首页</span>
+                            <i class="fa fa-dashboard"></i> <span>Home</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-refresh fa-spin pull-right"></i>
                             </span>
@@ -424,34 +424,34 @@
 
                     <li>
                         <a href="{% url 'tradingSystem:user_profile' %}">
-                            <i class="fa fa-th"></i> <span>用户信息</span>
+                            <i class="fa fa-th"></i> <span>Userinfo</span>
                             <span class="pull-right-container">
-                          <small class="label pull-right bg-green">开户有奖</small></span>
+                          <small class="label pull-right bg-green">reward</small></span>
                         </a>
                     </li>
 
                     <li>
                         <a href="{% url 'tradingSystem:stock_list' %}">
-                            <i class="fa fa-thumbs-up"></i> <span>股票列表</span>
+                            <i class="fa fa-thumbs-up"></i> <span>Stock List</span>
                             <span class="pull-right-container">
-                          <small class="label pull-right bg-red">热</small></span>
+                          <small class="label pull-right bg-red">hot</small></span>
                         </a>
                     </li>
                     <li>
                         <a href="{% url 'tradingSystem:sold_stock' %}">
-                            <i class="fa fa-thumbs-up"></i> <span>管理我的股票</span>
+                            <i class="fa fa-thumbs-up"></i> <span>Manage My Stock</span>
                             <span class="pull-right-container">
-                          <small class="label pull-right bg-red">热</small></span>
+                          <small class="label pull-right bg-red">hot</small></span>
                         </a>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="{% url 'tradingSystem:comment_list' %}">
-                            <i class="fa fa-comment-o"></i> <span>管理我的评论</span>
+                            <i class="fa fa-comment-o"></i> <span>Manage My Comments</span>
                             <span class="pull-right-container">
-                          <small class="label pull-right bg-blue">新</small></span>
+                          <small class="label pull-right bg-blue">new</small></span>
                         </a>
-                    </li>
+                    </li> -->
 
                 {% endif %}
             </ul>
@@ -467,8 +467,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 1.0.0
         </div>
-        <strong>Copyright &copy; 2020-<a href="https://www.buct.edu.cn" target="_blank">Beijing University of Chemical
-            Technology</a>.</strong> All rights
+        <strong>Copyright &copy; 2024 Singapore Training Genny Team.</strong> All rights
         reserved.
     </footer>
 </div>

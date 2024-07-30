@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-查看新闻详情
+View News Details
 {% endblock %}
 
 {% block content %}
@@ -39,9 +39,9 @@
                     </div>
                     <!-- /.chat -->
                     <div class="box-footer">
-                        <a href="{% url 'tradingSystem:news_detail' pre_news %}" class="btn btn-sm btn-info btn-flat pull-left">上一则新闻</a>
+                        <a href="{% url 'tradingSystem:news_detail' pre_news %}" class="btn btn-sm btn-info btn-flat pull-left">Previous News</a>
                         <a href="{% url 'tradingSystem:news_detail' nx_news %}"
-                           class="btn btn-sm btn-info btn-flat pull-right">下一则新闻</a>
+                           class="btn btn-sm btn-info btn-flat pull-right">Next News</a>
                     </div>
                 </div>
                 <!-- /.box (chat box) -->
