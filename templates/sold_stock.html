@@ -30,7 +30,7 @@
                             <th>Type</th>
                             <th>Board</th>
                             <th>Change</th>
-                            <th>Details</th>
+                            <th>Detail</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -51,7 +51,7 @@
                                     <td>{{ item.obj.stock_id.block }}</td>
                                     <td>{{ item.obj.stock_id.change_extent }}</td>
                                     <td style="vertical-align: middle">
-                                        <a href="{% url 'tradingSystem:out' item.obj.stock_id.stock_id %}">详情</a>
+                                        <a href="{% url 'tradingSystem:out' item.obj.stock_id.stock_id %}">detail</a>
                                     </td>
                                 </tr>
                             {% else %}
@@ -68,7 +68,7 @@
                                     <td>{{ item.obj.stock_id.block }}</td>
                                     <td>{{ item.obj.stock_id.change_extent }}</td>
                                     <td style="vertical-align: middle">
-                                        <a href="{% url 'tradingSystem:out' item.obj.stock_id.stock_id  %}">详情</a>
+                                        <a href="{% url 'tradingSystem:out' item.obj.stock_id.stock_id  %}">detail</a>
                                     </td>
                                 </tr>
                             {% endif %}
