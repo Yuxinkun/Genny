@@ -8,7 +8,7 @@
     <section class="content">
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="box box-info">
                     <div class="box-header with-border">
                         <h3 class="box-title">Daily candlestick chart</h3>
@@ -26,78 +26,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="box box-solid bg-teal-gradient">
-                    <div class="box-header">
-                        <i class="fa fa-th"></i>
-
-                        <h3 class="box-title">Portfolio</h3>
-
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i
-                                    class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i
-                                    class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="box-body border-radius-none">
-                        <div class="chart" id="line-chart" style="height: 250px;">
-
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
-
-                    <!-- /.box-footer -->
-                </div>
-            </div>
+            
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <!-- Chat box -->
-                <div class="box box-success">
-                    <div class="box-header">
-                        <i class="fa fa-comments-o"></i>
-
-                        <h3 class="box-title">Comment</h3>
-
-                        <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                            <div class="btn-group" data-toggle="btn-toggle">
-                                <button type="button" class="btn btn-default btn-sm active"><i
-                                        class="fa fa-square text-green"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm"><i
-                                        class="fa fa-square text-red"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-body chat" id="chat-box">
-                        {% for comment in comments %}
-                            <div class="item">
-                                <img src="{{ comment.user_id.photo_url }}" alt="user image" class="online">
-                                <p class="message">
-                                    <a href="{% url 'tradingSystem:adm_view_user' comment.user_id.phone_number %}"
-                                       class="name">
-                                        <small class="text-muted pull-right"><i
-                                                class="fa fa-clock-o"></i> {{ comment.comment_time }}</small>
-                                        {{ comment.user_id.user_name }}
-                                    </a>
-                                    {{ comment.content }}
-                                </p>
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <div class="box-footer chat">
-                        <a href="{% url 'tradingSystem:adm_comment' %}">
-                            <button class="btn btn-info pull-right">Comments Management</button>
-                        </a>
-                    </div>
-                </div>
-                <!-- /.box (chat box) -->
-            </div>
-        </div>
-
+      
 
     </section>
 {% endblock %}
@@ -157,7 +88,7 @@
                 }
             },
             legend: {
-                data: ['Daily K-line', 'MA5', 'MA10', 'MA20', 'MA30']
+                data: ['MA', 'MA5', 'MA10', 'MA20', 'MA30']
             },
             grid: {
                 left: '10%',
@@ -173,7 +104,8 @@
                 splitLine: {show: false},
                 splitNumber: 20,
                 min: 'dataMin',
-                max: 'dataMax'
+                max: 'dataMax',
+                inverse: true
             },
             yAxis: {
                 scale: true,
@@ -197,7 +129,7 @@
             ],
             series: [
                 {
-                    name: 'Daily K-line',
+                    name: 'MA',
                     type: 'candlestick',
                     data: data0.values,
                     itemStyle: {
@@ -336,11 +268,12 @@
         var hold_vol = {{ hold_vold|safe }};
         for (j = 0, len = hold_vol.length; j < len; j++) {
             drawdata.push({value: hold_vol[j][1], name: hold_vol[j][0]});
+            pitchname.push(hold_vol[j][0]);
         }
 
         option = {
             title: {
-                text: '股权占比',
+                text: 'Portfolio',
                 left: 'center'
             },
             tooltip: {
@@ -354,7 +287,7 @@
             },
             series: [
                 {
-                    name: '访问来源',
+                    name: 'Access source',
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],

@@ -10,6 +10,68 @@
     </section>
 
     <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          {# <div class="box box-solid bg-teal-gradien">#}
+            <div class="box box-solid">
+              <div class="box-header">
+                <i class="fa fa-th"></i>
+      
+                <h3 class="box-title">Look at The Market</h3>
+                <div class="box-tools pull-right">
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown">
+                      S&P 500 INDEX
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                      <li><a href="#" data-chart="dataset1">S&P 500 INDEX</a></li>
+                      <li><a href="#" data-chart="dataset2">Hang Sang Index</a></li>
+                      <li><a href="#" data-chart="dataset3">Nikkei 225 Index</a></li>
+                      <li><a href="#" data-chart="dataset4">NASDAQ Composite Index</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="box-body">
+                <div id="stock-chart" style="height:500px;"></div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer no-border">
+                {% comment %}
+                <div class="row">
+      
+                  <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                      data-fgColor="#39CCCC">
+      
+                    <div class="knob-label">Mail-Orders</div>
+                  </div>
+      
+                  <!-- ./col -->
+                  <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                      data-fgColor="#39CCCC">
+      
+                    <div class="knob-label">Online</div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-xs-4 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                      data-fgColor="#39CCCC">
+      
+                    <div class="knob-label">In-Store</div>
+                  </div>
+                  <!-- ./col -->
+                </div>
+                {% endcomment %}
+                <!-- /.row -->
+              </div>
+              <!-- /.box-footer -->
+            </div>
+          </div>
+      
+        </div>
 
         <div class="row">
             <div class="col-md-8">
@@ -96,72 +158,7 @@
 
         </div>
 
-        <div class="row">
-
-            <div class="col-md-12">
-                {#                <div class="box box-solid bg-teal-gradien">#}
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-th"></i>
-
-                        <h3 class="box-title">Look at The Market</h3>
-                        <div class="box-tools pull-right">
-                          <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown">
-                              S&P 500 INDEX
-                              <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                              <li><a href="#" data-chart="dataset1">S&P 500 INDEX</a></li>
-                              <li><a href="#" data-chart="dataset2">Hang Sang Index</a></li>
-                              <li><a href="#" data-chart="dataset3">Nikkei 225 Index</a></li>
-                              <li><a href="#" data-chart="dataset4">NASDAQ Composite Index</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <div id="stock-chart" style="height:500px;"></div>
-                    </div>
-                    <!-- /.box-body -->
-                    <div class="box-footer no-border">
-                        {% comment %}
-                        <div class="row">
-
-                            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                <input type="text" class="knob" data-readonly="true" value="20" data-width="60"
-                                       data-height="60"
-                                       data-fgColor="#39CCCC">
-
-                                <div class="knob-label">Mail-Orders</div>
-                            </div>
-
-                            <!-- ./col -->
-                            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                <input type="text" class="knob" data-readonly="true" value="50" data-width="60"
-                                       data-height="60"
-                                       data-fgColor="#39CCCC">
-
-                                <div class="knob-label">Online</div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-xs-4 text-center">
-                                <input type="text" class="knob" data-readonly="true" value="30" data-width="60"
-                                       data-height="60"
-                                       data-fgColor="#39CCCC">
-
-                                <div class="knob-label">In-Store</div>
-                            </div>
-                            <!-- ./col -->
-                        </div>
-                        {% endcomment %}
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.box-footer -->
-                </div>
-            </div>
-
-        </div>
+        
 
     </section>
 

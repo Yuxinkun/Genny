@@ -230,13 +230,9 @@ def stock_info(request, stock_id):
 
     if (choosenStock[0].stock_type == "上证"):
         sql = "SELECT * FROM `%s`"
-
         seaname = stock_id + "_" + "SH"
-
         cursor.execute(sql, [seaname])
-        hisData = cursor.fetchall()
-        hisData = np.array(hisData)
-        hisData = hisData.tolist()
+        hisData = getHistoryData.getHistoryData(stock_id + ".SH")
         hold_vol = getAstock.getAstock(stock_id + ".SH")
         # 抓取每日实时数据，4分钟一个时刻
         if (f):
@@ -263,9 +259,7 @@ def stock_info(request, stock_id):
         seaname = stock_id + "_" + "SZ"
 
         cursor.execute(sql, [seaname])
-        hisData = cursor.fetchall()
-        hisData = np.array(hisData)
-        hisData = hisData.tolist()
+        hisData = getHistoryData.getHistoryData(stock_id + ".SZ")
 
         if (f):
             f = 1
@@ -286,8 +280,6 @@ def stock_info(request, stock_id):
         hold_vol = getAstock.getAstock(stock_id + ".SZ")
     cursor.close()
     conn.close()
-
-
     context = {
         "sid": choosenStock[0].stock_id,
         "sname": choosenStock[0].stock_name,

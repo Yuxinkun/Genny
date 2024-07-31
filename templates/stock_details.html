@@ -189,7 +189,8 @@
                 splitLine: {show: false},
                 splitNumber: 20,
                 min: 'dataMin',
-                max: 'dataMax'
+                max: 'dataMax',
+                inverse: true
             },
             yAxis: {
                 scale: true,
@@ -232,7 +233,7 @@
                         },
                         data: [
                             {
-                                name: 'XX标点',
+                                name: 'XXmark',
                                 coord: ['2013/5/31', 2300],
                                 value: 2300,
                                 itemStyle: {
@@ -372,7 +373,7 @@
             },
             series: [
                 {
-                    name: '访问来源',
+                    name: 'Access source',
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],
@@ -429,7 +430,9 @@
                         },
                         yAxis: {
                             type: 'value',
-                            boundaryGap: [0, '100%']
+                            boundaryGap: [0, '100%'],
+                            min: 17,
+                            max:18
                         },
                         dataZoom: [{
                             type: 'inside',
@@ -450,7 +453,7 @@
                         }],
                         series: [
                             {
-                                name: '股价',
+                                name: 'share price',
                                 type: 'line',
                                 smooth: true,
                                 symbol: 'none',
@@ -474,7 +477,7 @@
 
                     KlineMap.setOption(option1);
                 } else {
-                    alert("非开盘时间！！");
+                    alert("Non-opening hours!!");
                 }
             });
         }
@@ -504,12 +507,12 @@
 
 
                     } else {
-                        alert("当前非开盘时间！！");
+                        alert("Non-opening hours!!");
                     }
 
 
                 } else {
-                    alert("当前非开盘时间！！");
+                    alert("Non-opening hours!!");
                 }
 
 
@@ -532,12 +535,12 @@
                     dataType: 'JSON',
                     success: function (arg) {
                         if (arg["flag"] == 1) {
-                            alert("增持成功");
+                            alert("Successful ");
                         } else {
                             if (arg["money"] == 1) {
-                                alert("请检查账户是否开启或被冻结！")
+                                alert("Please check if your account is open or frozen!")
                             } else {
-                                alert("余额不足，请充值！")
+                                alert("Insufficient balance, please recharge!")
                             }
                         }
 
