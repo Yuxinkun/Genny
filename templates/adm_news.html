@@ -3,25 +3,25 @@
 {% load staticfiles %}
 
 {% block title %}
-    管理每日重大新闻
+    Breaking News
 {% endblock %}
 
 {% block content %}
 
     <section class="content-header">
-        <h1>新闻资讯管理
-            <small>管理员</small>
+        <h1>News management
+            <small>Admin</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{% url 'tradingSystem:index' %}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li class="active">管理员</li>
-            <li class="active">新闻资讯管理</li>
+            <li><a href="{% url 'tradingSystem:index' %}"><i class="fa fa-dashboard"></i> HomePage</a></li>
+            <li class="active">Admin</li>
+            <li class="active">News</li>
         </ol>
     </section>
 
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">新闻列表</h3>
+            <h3 class="box-title">News List</h3>
             <div class="box-header ">
                 {% comment %}
 
@@ -51,14 +51,14 @@
                 <table id="news_table" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>编号</th>
-                        <th>新闻ID</th>
-                        <th>新闻标题</th>
-                        <th>新闻摘要</th>
-                        <th>发生时间</th>
-                        <th>阅读次数</th>
-                        <th>详情</th>
-                        <th>删除</th>
+                        <th>Id</th>
+                        <th>News Id</th>
+                        <th>Title</th>
+                        <th>Summary</th>
+                        <th>Date</th>
+                        <th>Views</th>
+                        <th>Details</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -73,10 +73,10 @@
                             <td>{{ result.news_time }}</td>
                             <td>{{ result.read }}</td>
                             <td style="vertical-align: middle">
-                                <a href="{% url 'tradingSystem:adm_news_detail' result.news_id %}">详情</a>
+                                <a href="{% url 'tradingSystem:adm_news_detail' result.news_id %}">Details</a>
                             </td>
                             <td style="vertical-align: middle">
-                                <a style="color: red" href="{% url 'tradingSystem:adm_delete_news' result.news_id %}">删除</a>
+                                <a style="color: red" href="{% url 'tradingSystem:adm_delete_news' result.news_id %}">Delete</a>
                             </td>
                         </tr>
                     {% endfor %}
@@ -85,11 +85,13 @@
             </div>
         </div>
         <div class="box-footer">
-            <div class="btn-group pull-left ">
-                <button id="add_btn" class="btn btn-success" type="button">
-                    <span class="glyphicon glyphicon-plus">新建新闻信息</span>
+            <div class="btn-group pull-left">
+                <button id="add_btn" class="btn btn-success" type="button" style="margin-right: 10px;">
+                    <span class="glyphicon glyphicon-plus"> Create </span>
                 </button>
-                <a class="pull-right" href="{% url 'tradingSystem:spy_news' %}"><button class="btn btn-info pull-right"><i class="fa fa-refresh fa-spin"></i>抓取一些新闻信息</button></a>
+                <a class="pull-right" href="{% url 'tradingSystem:spy_news' %}">
+                    <button class="btn btn-info pull-right"><i class="fa fa-refresh fa-spin"></i> Capture News</button>
+                </a>
             </div>
         </div>
 
@@ -100,20 +102,20 @@
                         {% csrf_token %}
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">添加新闻</h4>
+                            <h4 class="modal-title">Add News</h4>
                         </div>
                         <div class="modal-content" id="add_news_modal">
                             <div class="form-horizontal">
                                 <div class="form-group">
                                     {% csrf_token %}
-                                    <label for="news_title" class="col-sm-2 control-label" style="color: red">新闻标题：</label>
+                                    <label for="news_title" class="col-sm-2 control-label" style="color: red">Title：</label>
                                     <div class="col-sm-10">
                                         <input type="text" id="news_title" class="form-control"
                                                name="news_title" placeholder="输入标题">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="news_content" class="col-sm-2 control-label">新闻内容：</label>
+                                    <label for="news_content" class="col-sm-2 control-label">Content：</label>
                                     <div class="col-sm-10">
                                         <textarea name="news_content" id="news_content" class="form-control" rows="10" placeholder="输入您的内容"></textarea>
                                     </div>
@@ -122,9 +124,9 @@
                             <div class="modal-footer">
                                 <div class="center-block">
                                     <button id="cancelAdd" type="button" class="btn btn-default"
-                                            data-dismiss="modal">取消
+                                            data-dismiss="modal">Cancel
                                     </button>
-                                    <button id="sureToAdd" type="submit" class="btn btn-success">保存</button>
+                                    <button id="sureToAdd" type="submit" class="btn btn-success">Save</button>
                                 </div>
                             </div>
                         </div>
@@ -171,27 +173,27 @@
                     "info": true,         <!-- 显示信息 -->
                     "autoWidth": false,    <!-- 固定宽度 -->
                     "language": {
-                        "sProcessing": "处理中...",
-                        "sLengthMenu": "显示 _MENU_ 项结果",
-                        "sZeroRecords": "没有匹配结果",
-                        "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
-                        "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
-                        "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                        "sProcessing": "Processing...",
+                        "sLengthMenu": "Show _MENU_ Result",
+                        "sZeroRecords": "No Matching",
+                        "sInfo": "Show From _START_ To _END_ Result，Total _TOTAL_ ",
+                        "sInfoEmpty": "Show From 0 To 0 Result，Total 0 ",
+                        "sInfoFiltered": "(Filter By _MAX_ )",
                         "sInfoPostFix": "",
-                        "sSearch": "搜索:",
+                        "sSearch": "Search:",
                         "sUrl": "",
-                        "sEmptyTable": "表中数据为空",
-                        "sLoadingRecords": "载入中...",
+                        "sEmptyTable": "Empty",
+                        "sLoadingRecords": "Loading...",
                         "sInfoThousands": ",",
                         "oPaginate": {
-                            "sFirst": "首页",
-                            "sPrevious": "上页",
-                            "sNext": "下页",
-                            "sLast": "末页"
+                            "sFirst": "First",
+                            "sPrevious": "Last",
+                            "sNext": "Next",
+                            "sLast": "End"
                         },
                         "oAria": {
-                            "sSortAscending": ": 以升序排列此列",
-                            "sSortDescending": ": 以降序排列此列"
+                            "sSortAscending": ": Asc",
+                            "sSortDescending": ": Desc"
                         }
                     },
                     "columnDefs": [{

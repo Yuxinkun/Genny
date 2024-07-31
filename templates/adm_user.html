@@ -3,24 +3,24 @@
 {% load staticfiles %}
 
 {% block title %}
-    管理用户信息
+    User Info
 {% endblock %}
 
 {% block content %}
 
     <section class="content-header">
-        <h1>全部用户信息管理
-            <small>管理员</small>
+        <h1>All User Info
+            <small>Admin</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{% url 'tradingSystem:adm_index' %}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li class="active">管理员</li>
-            <li class="active">用户信息管理</li>
+            <li><a href="{% url 'tradingSystem:adm_index' %}"><i class="fa fa-dashboard"></i> HomePage</a></li>
+            <li class="active">Admin</li>
+            <li class="active">User Info</li>
         </ol>
     </section>
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">用户信息列表</h3>
+            <h3 class="box-title">User List</h3>
             <div class="box-header ">
                 {% comment %}
 
@@ -51,14 +51,14 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>姓名</th>
-                        <th>性别</th>
-                        <th>邮箱</th>
-                        <th>手机号码</th>
-                        <th>账户类型</th>
-                        <th>身份证号</th>
-                        <th>账户余额</th>
-                        <th>操作</th>
+                        <th>Name</th>
+                        <th>gender</th>
+                        <th>Mail</th>
+                        <th>Phone</th>
+                        <th>Account</th>
+                        <th>Identifier</th>
+                        <th>Balance</th>
+                        <th>Operate</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -74,7 +74,7 @@
                             <td>{{ user.id_no }}</td>
                             <td>{{ user.account_balance }}</td>
                             <td style="vertical-align: middle">
-                                <a href="{% url 'tradingSystem:adm_view_user' user.phone_number %}">详情</a>
+                                <a href="{% url 'tradingSystem:adm_view_user' user.phone_number %}">Details</a>
                             </td>
                         </tr>
                     {% endfor %}
@@ -120,27 +120,27 @@
                     "info": true,         <!-- 显示信息 -->
                     "autoWidth": false,    <!-- 固定宽度 -->
                     "language": {
-                        "sProcessing": "处理中...",
-                        "sLengthMenu": "显示 _MENU_ 项结果",
-                        "sZeroRecords": "没有匹配结果",
-                        "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
-                        "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+                        "sProcessing": "Processing...",
+                        "sLengthMenu": "Show _MENU_ Result",
+                        "sZeroRecords": "No Matching",
+                        "sInfo": "Show From _START_ To _END_ Result，Total _TOTAL_",
+                        "sInfoEmpty": "Show From 0 To 0 Result，Total 0",
                         "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
                         "sInfoPostFix": "",
-                        "sSearch": "搜索:",
+                        "sSearch": "Search:",
                         "sUrl": "",
-                        "sEmptyTable": "表中数据为空",
-                        "sLoadingRecords": "载入中...",
+                        "sEmptyTable": "Empty",
+                        "sLoadingRecords": "Loading...",
                         "sInfoThousands": ",",
                         "oPaginate": {
-                            "sFirst": "首页",
-                            "sPrevious": "上页",
-                            "sNext": "下页",
-                            "sLast": "末页"
+                            "sFirst": "First",
+                            "sPrevious": "Last",
+                            "sNext": "Next",
+                            "sLast": "End"
                         },
                         "oAria": {
-                            "sSortAscending": ": 以升序排列此列",
-                            "sSortDescending": ": 以降序排列此列"
+                            "sSortAscending": ": Asc",
+                            "sSortDescending": ": Desc"
                         }
                     },
                     "columnDefs": [{

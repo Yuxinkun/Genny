@@ -3,24 +3,24 @@
 {% load staticfiles %}
 
 {% block title %}
-    管理交易记录
+    Trade record
 {% endblock %}
 
 {% block content %}
 
     <section class="content-header">
-        <h1>交易记录管理
-            <small>管理员</small>
+        <h1>Trade Record
+            <small>Admin</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="{% url 'tradingSystem:adm_index' %}"><i class="fa fa-dashboard"></i> 主页</a></li>
-            <li class="active">管理员</li>
-            <li class="active">交易记录管理</li>
+            <li><a href="{% url 'tradingSystem:adm_index' %}"><i class="fa fa-dashboard"></i> HomePage</a></li>
+            <li class="active">Trader</li>
+            <li class="active">Trade Record</li>
         </ol>
     </section>
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">交易记录列表</h3>
+            <h3 class="box-title">Trade List</h3>
             <div class="box-header ">
                 {% comment %}
 
@@ -50,14 +50,14 @@
                 <table id="trading_table" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>交易编号</th>
-                        <th>用户手机</th>
-                        <th>股票编号</th>
-                        <th>股票名称</th>
-                        <th>交易价格</th>
-                        <th>成交时间</th>
-                        <th>详情</th>
-                        <th>操作</th>
+                        <th>Trade Id</th>
+                        <th>Phone</th>
+                        <th>Trade Code</th>
+                        <th>Stock Name</th>
+                        <th>Price</th>
+                        <th>Trade time</th>
+                        <th>Details</th>
+                        <th>Operate</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -130,27 +130,27 @@
                     "info": true, <!-- 显示信息 -->
                     "autoWidth": false, <!-- 固定宽度 -->
                     "language": {
-                        "sProcessing": "处理中...",
-                        "sLengthMenu": "显示 _MENU_ 项结果",
-                        "sZeroRecords": "没有匹配结果",
-                        "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
-                        "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
-                        "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                        "sProcessing": "Processing...",
+                        "sLengthMenu": "Show _MENU_ Result",
+                        "sZeroRecords": "No Matching",
+                        "sInfo": "Show From _START_ To _END_ Result，Total _TOTAL_",
+                        "sInfoEmpty": "Show From 0 To 0 Result，Total 0 ",
+                        "sInfoFiltered": "(Filter By _MAX_ Result)",
                         "sInfoPostFix": "",
-                        "sSearch": "搜索:",
+                        "sSearch": "Search:",
                         "sUrl": "",
-                        "sEmptyTable": "表中数据为空",
-                        "sLoadingRecords": "载入中...",
+                        "sEmptyTable": "Empty",
+                        "sLoadingRecords": "Loading...",
                         "sInfoThousands": ",",
                         "oPaginate": {
-                            "sFirst": "首页",
-                            "sPrevious": "上页",
-                            "sNext": "下页",
-                            "sLast": "末页"
+                            "sFirst": "First",
+                            "sPrevious": "Last",
+                            "sNext": "Next",
+                            "sLast": "End"
                         },
                         "oAria": {
-                            "sSortAscending": ": 以升序排列此列",
-                            "sSortDescending": ": 以降序排列此列"
+                            "sSortAscending": ": Asc",
+                            "sSortDescending": ": Desc"
                         }
                     },
                     "columnDefs": [{
