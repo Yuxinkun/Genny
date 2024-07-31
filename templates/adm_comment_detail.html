@@ -1,7 +1,7 @@
 {% extends 'adm_base.html' %}
 
 {% block title %}
-查看评论详情
+Comment Details
 {% endblock %}
 
 {% block content %}
@@ -22,7 +22,7 @@
                             {{ comment.content }}
                         </p>
                          <middle class="text-muted pull-right"><i
-                                                class="fa fa-clock-o"></i> {{ comment.comment_time | date:'Y年m月d日 H时m分' }} </middle>
+                                                class="fa fa-clock-o"></i> {{ comment.comment_time | date:'Y/m/d H:m' }} </middle>
 
 
                         <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
@@ -45,9 +45,9 @@
                             <p class="message">
                                 <b><a href="{% url 'tradingSystem:view_user_profile' reply.user_id.phone_number %}" class="name">
                                     {{ reply.user_id.user_name }}</a>
-                                回复<a href="{% url 'tradingSystem:view_user_profile' reply.comment.user_id.phone_number %}" class="name">
+                                Reply<a href="{% url 'tradingSystem:view_user_profile' reply.comment.user_id.phone_number %}" class="name">
                                     {{ reply.comment.user_id.user_name }}：
-                                </a><small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ reply.reply_time | date:'Y年m月d日 H时m分'}} </small></b>
+                                </a><small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ reply.reply_time | date:'Y/m/d H:m'}} </small></b>
                             {{ reply.content }}
                             </p>
                             </div>
@@ -55,7 +55,7 @@
                     </div>
                     <!-- /.chat -->
                     <div class="box-footer">
-                        <a href="{% url 'tradingSystem:adm_delete_comment' comment.id %}"><button type="button" id="user_delete" class="btn btn-danger pull-right">删除该评论</button></a>
+                        <a href="{% url 'tradingSystem:adm_delete_comment' comment.id %}"><button type="button" id="user_delete" class="btn btn-danger pull-right">Delete</button></a>
                     </div>
                 </div>
                 <!-- /.box (chat box) -->

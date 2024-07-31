@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 {% block title %}
-    {{ user.user_name }}的个人信息
+    {{ user.user_name }} Info
 {% endblock %}
 
 {% block content %}
@@ -32,21 +32,21 @@
 
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
-                                <b>账号余额</b> <a
-                                    class="pull-right">{{ user.account_balance | floatformat }}元</a>
+                                <b>Balance</b> <a
+                                    class="pull-right">${{ user.account_balance | floatformat }} </a>
                             </li>
                             <li class="list-group-item">
-                                <b>买入</b> <a class="pull-right">{{ buy_in }}手</a>
+                                <b>Buy in</b> <a class="pull-right">{{ buy_in }}Lot</a>
                             </li>
                             <li class="list-group-item">
-                                <b>抛出</b> <a class="pull-right">{{ buy_out }}手</a>
+                                <b>Sell-off</b> <a class="pull-right">{{ buy_out }}Lot</a>
                             </li>
                         </ul>
 
                         {% if user.freeze %}
-                            <button href="#" id="unfreeze_btn" class="btn btn-success btn-block">取消冻结</button>
+                            <button href="#" id="unfreeze_btn" class="btn btn-success btn-block">Unfreeze</button>
                         {% else %}
-                        <button href="#" id="freeze_btn" class="btn btn-danger btn-block">冻结账户</button>
+                        <button href="#" id="freeze_btn" class="btn btn-danger btn-block">Account freeze</button>
                         {% endif %}
                     </div>
                     <!-- /.box-body -->
@@ -57,7 +57,7 @@
             <div class="col-md-9">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li><a href="#settings" data-toggle="tab">查看或修改用户的信息</a></li>
+                        <li><a href="#settings" data-toggle="tab">Edit</a></li>
                     </ul>
                     <div class="tab-content">
 
@@ -76,7 +76,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="user_name" class="col-sm-2 control-label">姓名</label>
+                                    <label for="user_name" class="col-sm-2 control-label">Name</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="user_name" id="user_name"
@@ -85,7 +85,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="user_email" class="col-sm-2 control-label">邮箱</label>
+                                    <label for="user_email" class="col-sm-2 control-label">Mail</label>
 
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" name="user_email" id="user_email"
@@ -94,7 +94,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="user_sex" class="col-sm-2 control-label">性别</label>
+                                    <label for="user_sex" class="col-sm-2 control-label">Gender</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="user_sex" class="form-control" id="user_sex"
@@ -103,7 +103,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="phone_number" class="col-sm-2 control-label">手机</label>
+                                    <label for="phone_number" class="col-sm-2 control-label">Phone</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="phone_number" class="form-control" readonly="readonly"
@@ -113,7 +113,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="id_no" class="col-sm-2 control-label">身份证号</label>
+                                    <label for="id_no" class="col-sm-2 control-label">Identifier Number</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="id_no" class="form-control" id="id_no"
@@ -122,7 +122,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="account_num" class="col-sm-2 control-label">银行账户</label>
+                                    <label for="account_num" class="col-sm-2 control-label">Account</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="account_num" class="form-control" id="account_num"
@@ -132,7 +132,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="account_type" class="col-sm-2 control-label">银行类型</label>
+                                    <label for="account_type" class="col-sm-2 control-label">Bank</label>
 
                                     <div class="col-sm-10">
                                         <input type="text" name="account_type" class="form-control" id="account_type"
@@ -141,7 +141,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="account_opened" class="col-sm-2 control-label">是否开户</label>
+                                    <label for="account_opened" class="col-sm-2 control-label">isOpen</label>
 
                                     {% if user.account_opened %}
                                         <div class="col-sm-10">
@@ -159,7 +159,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="freeze" class="col-sm-2 control-label">是否被冻结</label>
+                                    <label for="freeze" class="col-sm-2 control-label">isFrozen</label>
                                     {% if user.freeze %}
                                         <div class="col-sm-10">
                                             <input type="text" name="freeze" class="form-control"
@@ -177,8 +177,8 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" id="conf_modify" class="btn btn-danger">确认修改</button>
-                                        <button type="button" id="user_delete" class="btn btn-danger pull-right">删除用户</button>
+                                        <button type="submit" id="conf_modify" class="btn btn-danger">Confirm</button>
+                                        <button type="button" id="user_delete" class="btn btn-danger pull-right">Delete</button>
                                     </div>
                                 </div>
 

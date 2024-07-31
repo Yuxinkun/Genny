@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block title %}欢迎登录股票交易管理系统{% endblock %}</title>
+    <title>{% block title %}Welcome to Genny{% endblock %}</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="shortcut icon" href="{% static 'img/buct-logo.ico' %}"/>
     <link rel="bookmark" href="{% static 'img/buct-logo.ico' %}"/>
@@ -78,12 +78,13 @@
 
 <div class="wrapper">
     <header class="main-header">
-        <a href="{% url 'tradingSystem:adm_index' %}" class="logo">
-            <span class="logo-lg"><b>股票交易管理系统</b></span>
+        <a href="{% url 'tradingSystem:adm_index' %}" class="logo" style="background-color:#737373">
+            <span class="logo-lg"><b>Genny</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
+        <nav class="navbar navbar-static-top" style="background-color:#cc0100">
             <!-- Sidebar toggle button-->
+
             <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
@@ -98,7 +99,7 @@
                                 <span class="label label-success">4</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">你有4消息</li>
+                                <li class="header">You have 4 messages</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -180,7 +181,7 @@
                                 <span class="label label-warning">10</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">你有10个通知</li>
+                                <li class="header">You have 10 notifications</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -223,7 +224,7 @@
                                 <span class="label label-danger">9</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">你有9项工作</li>
+                                <li class="header">You have 9 tasks</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -321,10 +322,10 @@
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="{% url 'tradingSystem:user_profile' %}"
-                                           class="btn btn-default btn-flat">信息设置</a>
+                                           class="btn btn-default btn-flat">Info Setting</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="{% url 'tradingSystem:log_out' %}" class="btn btn-default btn-flat">登出系统</a>
+                                        <a href="{% url 'tradingSystem:log_out' %}" class="btn btn-default btn-flat">Log Out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -361,7 +362,7 @@
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 {% else %}
-                    <div>您尚未注册，点我<a style="color:yellowgreen" href="{% url 'tradingSystem:register' %}">注册</a></div>
+                    <div>Clink me<a style="color:yellowgreen" href="{% url 'tradingSystem:register' %}">Register</a></div>
                 {% endif %}
             </div>
             <!-- search form -->
@@ -378,10 +379,10 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 {% if request.session %}
-                    <li class="header">导航栏</li>
+                    <li class="header">Navigation</li>
                     <li class="active">
                         <a href="{% url 'tradingSystem:adm_index' %}">
-                            <i class="fa fa-dashboard"></i> <span>首页</span>
+                            <i class="fa fa-dashboard"></i> <span>HomePage</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-refresh fa-spin pull-right"></i>
                             </span>
@@ -390,7 +391,7 @@
 
                     <li>
                         <a href="{% url 'tradingSystem:adm_user' %}">
-                            <i class="fa fa-th"></i> <span>用户信息管理</span>
+                            <i class="fa fa-th"></i> <span>User info</span>
                             <span class="pull-right-container">
                           <small class="label pull-right bg-green">{{ request.session.user_num }}</small></span>
                         </a>
@@ -398,41 +399,41 @@
 
                     <li>
                         <a href="{% url 'tradingSystem:adm_stock' %}">
-                            <i class="fa fa-thumbs-up"></i> <span>管理股票列表</span>
+                            <i class="fa fa-thumbs-up"></i> <span>Stock List</span>
                             <span class="pull-right-container">
                           <small class="label pull-right bg-red">{{ request.session.stock_num }}</small></span>
                         </a>
                     </li>
 
-                    <li>
-                        <a href="{% url 'tradingSystem:adm_trading' %}">
-                            <i class="fa fa-thumbs-up"></i> <span>管理交易记录</span>
-                            <span class="pull-right-container">
-                          <small class="label pull-right bg-red">火爆</small></span>
-                        </a>
-                    </li>
+<!--                    <li>-->
+<!--                        <a href="{% url 'tradingSystem:adm_trading' %}">-->
+<!--                            <i class="fa fa-thumbs-up"></i> <span>Trade Record</span>-->
+<!--                            <span class="pull-right-container">-->
+<!--                          <small class="label pull-right bg-red">HOT</small></span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li>
                         <a href="{% url 'tradingSystem:uphold' %}">
-                            <i class="fa fa-thumbs-up"></i> <span>维护每日股票信息</span>
+                            <i class="fa fa-thumbs-up"></i> <span>Daily Stock Info</span>
                             <span class="pull-right-container">
-                          <small class="label pull-right bg-blue">新</small></span>
+                          <small class="label pull-right bg-blue">New</small></span>
                         </a>
                     </li>
                     <li>
                         <a href="{% url 'tradingSystem:adm_news' %}">
-                            <i class="fa fa-comment-o"></i> <span>新闻管理</span>
+                            <i class="fa fa-comment-o"></i> <span>News</span>
                             <span class="pull-right-container">
-                          <small class="label pull-right bg-blue">新</small></span>
+                          <small class="label pull-right bg-blue">Latest</small></span>
                         </a>
                     </li>
 
-                    <li>
-                        <a href="{% url 'tradingSystem:adm_comment' %}">
-                            <i class="fa fa-comment-o"></i> <span>评论管理</span>
-                            <span class="pull-right-container">
-                          <small class="label pull-right bg-blue">潮</small></span>
-                        </a>
-                    </li>
+<!--                    <li>-->
+<!--                        <a href="{% url 'tradingSystem:adm_comment' %}">-->
+<!--                            <i class="fa fa-comment-o"></i> <span>Comment</span>-->
+<!--                            <span class="pull-right-container">-->
+<!--                          <small class="label pull-right bg-blue">HOT</small></span>-->
+<!--                        </a>-->
+<!--                    </li>-->
 
                 {% endif %}
             </ul>
@@ -454,8 +455,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 1.0.0
         </div>
-        <strong>Copyright &copy; 2020-<a href="https://www.buct.edu.cn" target="_blank">Beijing University of Chemical
-            Technology</a>.</strong> All rights
+        <strong>Copyright &copy;2024 Singapore Training Genny Team.</strong> All rights
         reserved.
     </footer>
 </div>

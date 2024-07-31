@@ -1,7 +1,7 @@
 {% extends "adm_base.html" %}
 {% load static %}
 {% load staticfiles %}
-{% block title %}欢迎登录股票交易管理系统{% endblock %}
+{% block title %}Welcome to Genny{% endblock %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
             <div class="col-md-8">
                 <div class="box box-info">
                     <div class="box-header with-border">
-                        <h3 class="box-title">股票日K</h3>
+                        <h3 class="box-title">Daily candlestick chart</h3>
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-minus"></i></button>
@@ -60,7 +60,7 @@
                     <div class="box-header">
                         <i class="fa fa-comments-o"></i>
 
-                        <h3 class="box-title">股票评论</h3>
+                        <h3 class="box-title">Comment</h3>
 
                         <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
                             <div class="btn-group" data-toggle="btn-toggle">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="box-footer chat">
                         <a href="{% url 'tradingSystem:adm_comment' %}">
-                            <button class="btn btn-info pull-right">管理全部评论</button>
+                            <button class="btn btn-info pull-right">Comments Management</button>
                         </a>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                 }
             },
             legend: {
-                data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30']
+                data: ['Daily K-line', 'MA5', 'MA10', 'MA20', 'MA30']
             },
             grid: {
                 left: '10%',
@@ -197,7 +197,7 @@
             ],
             series: [
                 {
-                    name: '日K',
+                    name: 'Daily K-line',
                     type: 'candlestick',
                     data: data0.values,
                     itemStyle: {
