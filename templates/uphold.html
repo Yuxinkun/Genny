@@ -182,7 +182,7 @@
 
         function AA() {
             $('#A').click(function () {
-                alert("维护成功！");
+                alert("Success！");
                 $.ajax({
                     url: '/updateEveDayOC',
                     type: 'GET',
@@ -190,7 +190,7 @@
                     traditional: true,
                     dataType: 'JSON',
                     success: function (arg) {
-                        alert("维护完毕！");
+                        alert("Completed！");
                     }
                 });
             });
@@ -199,7 +199,7 @@
         function BB() {
             $('#B').click(function () {
 
- alert("维护成功！");
+ alert("Success！");
                 $.ajax({
                     url: '/updateDayData',
                     type: 'GET',
@@ -207,7 +207,7 @@
                     traditional: true,
                     dataType: 'JSON',
                     success: function (arg) {
-                        alert("维护完毕！");
+                        alert("Completed！");
                     }
                 });
             });
@@ -216,7 +216,7 @@
         function CC() {
             $('#C').click(function () {
 
-    alert("监测开启！");
+    alert("Monitoring...");
                 $.ajax({
                     url: '/updateTickData',
                     type: 'GET',
@@ -224,7 +224,7 @@
                     traditional: true,
                     dataType: 'JSON',
                     success: function (arg) {
-                        alert("监测完成！");
+                        alert("Monitoring Finished！");
                     }
                 });
             });
