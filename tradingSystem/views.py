@@ -394,9 +394,7 @@ def out(request, stock_id):
         seaname = stock_id + "_" + "SH"
 
         cursor.execute(sql, [seaname])
-        hisData = cursor.fetchall()
-        hisData = np.array(hisData)
-        hisData = hisData.tolist()
+        hisData = getHistoryData.getHistoryData(stock_id + ".SH")
         hold_vol = getAstock.getAstock(stock_id + ".SH")
         # 抓取每日实时数据，4分钟一个时刻
         if (f):
@@ -422,9 +420,7 @@ def out(request, stock_id):
         seaname = stock_id + "_" + "SZ"
 
         cursor.execute(sql, [seaname])
-        hisData = cursor.fetchall()
-        hisData = np.array(hisData)
-        hisData = hisData.tolist()
+        hisData = getHistoryData.getHistoryData(stock_id + ".SZ")
 
         if (f):
             f = 1

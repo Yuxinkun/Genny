@@ -239,7 +239,7 @@
                         },
                         data: [
                             {
-                                name: 'XX标点',
+                                name: 'XXmark',
                                 coord: ['2013/5/31', 2300],
                                 value: 2300,
                                 itemStyle: {
@@ -379,7 +379,7 @@
             },
             series: [
                 {
-                    name: '访问来源',
+                    name: 'Access source',
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],
@@ -436,7 +436,9 @@
                         },
                         yAxis: {
                             type: 'value',
-                            boundaryGap: [0, '100%']
+                            boundaryGap: [0, '100%'],
+                            min: 17,
+                            max: 18
                         },
                         dataZoom: [{
                             type: 'inside',
@@ -482,7 +484,7 @@
                     KlineMap.setOption(option1);
                 }
                 else {
-                    alert("非开盘时间！！");
+                    alert("Current non-opening hours!!");
                 }
             });
         }
@@ -516,13 +518,13 @@
 
                     }
                     else {
-                        alert("当前非开盘时间！！");
+                        alert("Current non-opening hours!!");
                     }
 
 
                 }
                 else {
-                    alert("当前非开盘时间！！");
+                    alert("Current non-opening hours!!");
                 }
 
 
@@ -546,7 +548,7 @@
                     traditional: true,
                     dataType: 'JSON',
                     success: function (arg) {
-                        alert("当前剩余"+arg["rest"]+"股!!");
+                        alert("There are"+arg["rest"]+"shares remaining!!");
                         $('#eidtModal input[name="Y"]').val = "";
                     }
                 });
